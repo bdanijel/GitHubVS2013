@@ -28,8 +28,8 @@ Partial Class frmRacun
         Dim KupacIDLabel As System.Windows.Forms.Label
         Dim ProizvodIDLabel As System.Windows.Forms.Label
         Dim DatumLabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRacun))
         Dim KolicinaLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRacun))
         Me.BorzalDataSet = New Borzal.BorzalDataSet()
         Me.RacunBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.RacunTableAdapter = New Borzal.BorzalDataSetTableAdapters.RacunTableAdapter()
@@ -115,6 +115,15 @@ Partial Class frmRacun
         DatumLabel.Size = New System.Drawing.Size(41, 13)
         DatumLabel.TabIndex = 9
         DatumLabel.Text = "Datum:"
+        '
+        'KolicinaLabel
+        '
+        KolicinaLabel.AutoSize = True
+        KolicinaLabel.Location = New System.Drawing.Point(95, 217)
+        KolicinaLabel.Name = "KolicinaLabel"
+        KolicinaLabel.Size = New System.Drawing.Size(47, 13)
+        KolicinaLabel.TabIndex = 11
+        KolicinaLabel.Text = "Kolicina:"
         '
         'BorzalDataSet
         '
@@ -315,15 +324,6 @@ Partial Class frmRacun
         '
         Me.ProizvodBindingSource.DataMember = "Proizvod"
         Me.ProizvodBindingSource.DataSource = Me.BorzalDataSet
-        '
-        'KolicinaLabel
-        '
-        KolicinaLabel.AutoSize = True
-        KolicinaLabel.Location = New System.Drawing.Point(95, 217)
-        KolicinaLabel.Name = "KolicinaLabel"
-        KolicinaLabel.Size = New System.Drawing.Size(47, 13)
-        KolicinaLabel.TabIndex = 11
-        KolicinaLabel.Text = "Kolicina:"
         '
         'KolicinaTextBox
         '

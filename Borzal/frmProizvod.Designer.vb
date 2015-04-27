@@ -23,25 +23,25 @@ Partial Class frmProizvod
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProizvod))
         Dim ProizvodIdLabel As System.Windows.Forms.Label
         Dim NazivLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProizvod))
         Me.BorzalDataSet = New Borzal.BorzalDataSet()
         Me.ProizvodBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProizvodTableAdapter = New Borzal.BorzalDataSetTableAdapters.ProizvodTableAdapter()
         Me.TableAdapterManager = New Borzal.BorzalDataSetTableAdapters.TableAdapterManager()
         Me.ProizvodBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.ProizvodBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.ProizvodIdTextBox = New System.Windows.Forms.TextBox()
         Me.NazivTextBox = New System.Windows.Forms.TextBox()
@@ -52,6 +52,24 @@ Partial Class frmProizvod
         CType(Me.ProizvodBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ProizvodBindingNavigator.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'ProizvodIdLabel
+        '
+        ProizvodIdLabel.AutoSize = True
+        ProizvodIdLabel.Location = New System.Drawing.Point(72, 52)
+        ProizvodIdLabel.Name = "ProizvodIdLabel"
+        ProizvodIdLabel.Size = New System.Drawing.Size(63, 13)
+        ProizvodIdLabel.TabIndex = 1
+        ProizvodIdLabel.Text = "Proizvod Id:"
+        '
+        'NazivLabel
+        '
+        NazivLabel.AutoSize = True
+        NazivLabel.Location = New System.Drawing.Point(72, 78)
+        NazivLabel.Name = "NazivLabel"
+        NazivLabel.Size = New System.Drawing.Size(37, 13)
+        NazivLabel.TabIndex = 3
+        NazivLabel.Text = "Naziv:"
         '
         'BorzalDataSet
         '
@@ -93,6 +111,31 @@ Partial Class frmProizvod
         Me.ProizvodBindingNavigator.TabIndex = 0
         Me.ProizvodBindingNavigator.Text = "BindingNavigator1"
         '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorAddNewItem.Text = "Add new"
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 22)
+        Me.BindingNavigatorCountItem.Text = "of {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorDeleteItem.Text = "Delete"
+        '
         'BindingNavigatorMoveFirstItem
         '
         Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
@@ -125,17 +168,10 @@ Partial Class frmProizvod
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
         '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 15)
-        Me.BindingNavigatorCountItem.Text = "of {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
-        '
         'BindingNavigatorSeparator1
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 6)
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
         '
         'BindingNavigatorMoveNextItem
         '
@@ -143,7 +179,7 @@ Partial Class frmProizvod
         Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
         Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 20)
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorMoveNextItem.Text = "Move next"
         '
         'BindingNavigatorMoveLastItem
@@ -152,48 +188,21 @@ Partial Class frmProizvod
         Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
         Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 20)
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorMoveLastItem.Text = "Move last"
         '
         'BindingNavigatorSeparator2
         '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 6)
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Add new"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 20)
-        Me.BindingNavigatorDeleteItem.Text = "Delete"
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
         '
         'ProizvodBindingNavigatorSaveItem
         '
         Me.ProizvodBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.ProizvodBindingNavigatorSaveItem.Image = CType(resources.GetObject("ProizvodBindingNavigatorSaveItem.Image"), System.Drawing.Image)
         Me.ProizvodBindingNavigatorSaveItem.Name = "ProizvodBindingNavigatorSaveItem"
-        Me.ProizvodBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 23)
+        Me.ProizvodBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
         Me.ProizvodBindingNavigatorSaveItem.Text = "Save Data"
-        '
-        'ProizvodIdLabel
-        '
-        ProizvodIdLabel.AutoSize = True
-        ProizvodIdLabel.Location = New System.Drawing.Point(72, 52)
-        ProizvodIdLabel.Name = "ProizvodIdLabel"
-        ProizvodIdLabel.Size = New System.Drawing.Size(63, 13)
-        ProizvodIdLabel.TabIndex = 1
-        ProizvodIdLabel.Text = "Proizvod Id:"
         '
         'ProizvodIdTextBox
         '
@@ -202,15 +211,6 @@ Partial Class frmProizvod
         Me.ProizvodIdTextBox.Name = "ProizvodIdTextBox"
         Me.ProizvodIdTextBox.Size = New System.Drawing.Size(100, 20)
         Me.ProizvodIdTextBox.TabIndex = 2
-        '
-        'NazivLabel
-        '
-        NazivLabel.AutoSize = True
-        NazivLabel.Location = New System.Drawing.Point(72, 78)
-        NazivLabel.Name = "NazivLabel"
-        NazivLabel.Size = New System.Drawing.Size(37, 13)
-        NazivLabel.TabIndex = 3
-        NazivLabel.Text = "Naziv:"
         '
         'NazivTextBox
         '

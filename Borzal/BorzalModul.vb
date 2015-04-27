@@ -93,4 +93,24 @@
     '            UnhandledExceptionHandler()
     '        End Try
     '    End Sub
+
+
+    Public Class ColorTBoxOnFocus
+
+        Inherits TextBox
+
+        Public Sub ColorTBoxOnFocus_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Enter
+
+            Me.BackColor = System.Drawing.Color.Yellow
+
+        End Sub
+
+        Public Sub ColorTBoxOnFocus_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Leave
+
+            Me.BackColor = System.Drawing.Color.White
+
+        End Sub
+
+    End Class
+
 End Module

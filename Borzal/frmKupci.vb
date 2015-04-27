@@ -1,6 +1,11 @@
 ﻿Public Class frmKupci
     Private myTextBoxArray As TextBox()
 
+
+
+
+    
+
     Sub ValidateNumeric(ctlControl As Control)
         Dim ErrorProvider1 As ErrorProvider
         Try
@@ -38,8 +43,16 @@
 
     Private Sub KupacBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles KupacBindingNavigatorSaveItem.Click
         Me.Validate()
-        Me.KupacBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.BorzalDataSet)
+        Try
+            Me.KupacBindingSource.EndEdit()
+        Catch
+            UnhandledExceptionHandler()
+        End Try
+        Try
+            Me.TableAdapterManager.UpdateAll(Me.BorzalDataSet)
+        Catch
+            UnhandledExceptionHandler()
+        End Try
 
     End Sub
 
@@ -48,12 +61,20 @@
         Me.KupacTableAdapter.Fill(Me.BorzalDataSet.Kupac)
         ' xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
+        '   BindingNavigatorAddNewItem.PerformClick()
+
+
         myTextBoxArray = {NazivTextBox, MestoTextBox, AdresaTextBox, KbrTextBox, TelefonTextBox}
 
 
 
 
 
+    End Sub
+
+    Private Sub AdresaTextBox_Enter(sender As Object, e As EventArgs) Handles NazivTextBox.Enter, MestoTextBox.Enter, AdresaTextBox.Enter, KbrTextBox.Enter, TelefonTextBox.Enter
+
+        sender.BackColor = System.Drawing.Color.Yellow
     End Sub
     Private Sub nazivtextbox_KeyDown(sender As Object, e As KeyEventArgs) Handles NazivTextBox.KeyDown, MestoTextBox.KeyDown, AdresaTextBox.KeyDown, KbrTextBox.KeyDown, TelefonTextBox.KeyDown
         If e.KeyCode = Keys.Enter Then
@@ -68,6 +89,9 @@
             e.SuppressKeyPress = True
             SendKeys.Send("+{tab}")
             'e.KeyCode = Keys.Shift And e.KeyCode = Keys.Tab
+        End If
+        If e.KeyCode = Keys.Escape Then
+            Close()
         End If
     End Sub
 
@@ -109,4 +133,11 @@
     End Sub
 
 
+    Private Sub BindingNavigatorAddNewItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorAddNewItem.Click
+
+    End Sub
+
+    Private Sub AdresaTextBox_Leave(sender As Object, e As EventArgs) Handles NazivTextBox.Leave, MestoTextBox.Leave, AdresaTextBox.Leave, KbrTextBox.Leave, TelefonTextBox.Leave
+        sender.BackColor = System.Drawing.Color.White
+    End Sub
 End Class

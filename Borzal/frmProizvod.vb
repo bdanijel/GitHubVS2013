@@ -12,4 +12,8 @@
         Me.ProizvodTableAdapter.Fill(Me.BorzalDataSet.Proizvod)
 
     End Sub
+
+    Private Sub BindingNavigatorMovePreviousItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorMovePreviousItem.Click
+
+    End Sub
 End Class
