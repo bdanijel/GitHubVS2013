@@ -29,6 +29,7 @@ Partial Class frmKupci
         Dim AdresaLabel As System.Windows.Forms.Label
         Dim KbrLabel As System.Windows.Forms.Label
         Dim TelefonLabel As System.Windows.Forms.Label
+        Dim Label2 As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmKupci))
         Me.KupacBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
@@ -54,23 +55,26 @@ Partial Class frmKupci
         Me.gr1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.KupacTableAdapter = New Borzal.BorzalDataSetTableAdapters.KupacTableAdapter()
         Me.TableAdapterManager = New Borzal.BorzalDataSetTableAdapters.TableAdapterManager()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         KupacIdLabel = New System.Windows.Forms.Label()
         NazivLabel = New System.Windows.Forms.Label()
         MestoLabel = New System.Windows.Forms.Label()
         AdresaLabel = New System.Windows.Forms.Label()
         KbrLabel = New System.Windows.Forms.Label()
         TelefonLabel = New System.Windows.Forms.Label()
+        Label2 = New System.Windows.Forms.Label()
         CType(Me.KupacBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.KupacBindingNavigator.SuspendLayout()
         CType(Me.KupacBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BorzalDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gr1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'KupacIdLabel
         '
         KupacIdLabel.AutoSize = True
-        KupacIdLabel.Location = New System.Drawing.Point(93, 69)
+        KupacIdLabel.Location = New System.Drawing.Point(15, 122)
         KupacIdLabel.Name = "KupacIdLabel"
         KupacIdLabel.Size = New System.Drawing.Size(53, 13)
         KupacIdLabel.TabIndex = 1
@@ -79,7 +83,7 @@ Partial Class frmKupci
         'NazivLabel
         '
         NazivLabel.AutoSize = True
-        NazivLabel.Location = New System.Drawing.Point(93, 95)
+        NazivLabel.Location = New System.Drawing.Point(15, 148)
         NazivLabel.Name = "NazivLabel"
         NazivLabel.Size = New System.Drawing.Size(37, 13)
         NazivLabel.TabIndex = 3
@@ -88,7 +92,7 @@ Partial Class frmKupci
         'MestoLabel
         '
         MestoLabel.AutoSize = True
-        MestoLabel.Location = New System.Drawing.Point(93, 121)
+        MestoLabel.Location = New System.Drawing.Point(15, 174)
         MestoLabel.Name = "MestoLabel"
         MestoLabel.Size = New System.Drawing.Size(39, 13)
         MestoLabel.TabIndex = 5
@@ -97,7 +101,7 @@ Partial Class frmKupci
         'AdresaLabel
         '
         AdresaLabel.AutoSize = True
-        AdresaLabel.Location = New System.Drawing.Point(93, 147)
+        AdresaLabel.Location = New System.Drawing.Point(15, 200)
         AdresaLabel.Name = "AdresaLabel"
         AdresaLabel.Size = New System.Drawing.Size(43, 13)
         AdresaLabel.TabIndex = 7
@@ -106,7 +110,7 @@ Partial Class frmKupci
         'KbrLabel
         '
         KbrLabel.AutoSize = True
-        KbrLabel.Location = New System.Drawing.Point(93, 173)
+        KbrLabel.Location = New System.Drawing.Point(15, 226)
         KbrLabel.Name = "KbrLabel"
         KbrLabel.Size = New System.Drawing.Size(25, 13)
         KbrLabel.TabIndex = 9
@@ -115,11 +119,21 @@ Partial Class frmKupci
         'TelefonLabel
         '
         TelefonLabel.AutoSize = True
-        TelefonLabel.Location = New System.Drawing.Point(93, 199)
+        TelefonLabel.Location = New System.Drawing.Point(15, 252)
         TelefonLabel.Name = "TelefonLabel"
         TelefonLabel.Size = New System.Drawing.Size(46, 13)
         TelefonLabel.TabIndex = 11
         TelefonLabel.Text = "Telefon:"
+        '
+        'Label2
+        '
+        Label2.AutoSize = True
+        Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
+        Label2.Location = New System.Drawing.Point(12, 53)
+        Label2.Name = "Label2"
+        Label2.Size = New System.Drawing.Size(103, 31)
+        Label2.TabIndex = 14
+        Label2.Text = "KUPCI"
         '
         'KupacBindingNavigator
         '
@@ -135,7 +149,7 @@ Partial Class frmKupci
         Me.KupacBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.KupacBindingNavigator.Name = "KupacBindingNavigator"
         Me.KupacBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.KupacBindingNavigator.Size = New System.Drawing.Size(479, 25)
+        Me.KupacBindingNavigator.Size = New System.Drawing.Size(311, 25)
         Me.KupacBindingNavigator.TabIndex = 0
         Me.KupacBindingNavigator.Text = "BindingNavigator1"
         '
@@ -245,41 +259,41 @@ Partial Class frmKupci
         'NazivTextBox
         '
         Me.NazivTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KupacBindingSource, "Naziv", True))
-        Me.NazivTextBox.Location = New System.Drawing.Point(152, 92)
+        Me.NazivTextBox.Location = New System.Drawing.Point(74, 145)
         Me.NazivTextBox.Name = "NazivTextBox"
-        Me.NazivTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.NazivTextBox.Size = New System.Drawing.Size(178, 20)
         Me.NazivTextBox.TabIndex = 0
         '
         'MestoTextBox
         '
         Me.MestoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KupacBindingSource, "Mesto", True))
-        Me.MestoTextBox.Location = New System.Drawing.Point(152, 118)
+        Me.MestoTextBox.Location = New System.Drawing.Point(74, 171)
         Me.MestoTextBox.Name = "MestoTextBox"
-        Me.MestoTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.MestoTextBox.Size = New System.Drawing.Size(178, 20)
         Me.MestoTextBox.TabIndex = 1
         '
         'AdresaTextBox
         '
         Me.AdresaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KupacBindingSource, "Adresa", True))
-        Me.AdresaTextBox.Location = New System.Drawing.Point(152, 144)
+        Me.AdresaTextBox.Location = New System.Drawing.Point(74, 197)
         Me.AdresaTextBox.Name = "AdresaTextBox"
-        Me.AdresaTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.AdresaTextBox.Size = New System.Drawing.Size(178, 20)
         Me.AdresaTextBox.TabIndex = 2
         '
         'KbrTextBox
         '
         Me.KbrTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KupacBindingSource, "kbr", True))
-        Me.KbrTextBox.Location = New System.Drawing.Point(152, 170)
+        Me.KbrTextBox.Location = New System.Drawing.Point(74, 223)
         Me.KbrTextBox.Name = "KbrTextBox"
-        Me.KbrTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.KbrTextBox.Size = New System.Drawing.Size(40, 20)
         Me.KbrTextBox.TabIndex = 3
         '
         'TelefonTextBox
         '
         Me.TelefonTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KupacBindingSource, "Telefon", True))
-        Me.TelefonTextBox.Location = New System.Drawing.Point(152, 196)
+        Me.TelefonTextBox.Location = New System.Drawing.Point(74, 249)
         Me.TelefonTextBox.Name = "TelefonTextBox"
-        Me.TelefonTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.TelefonTextBox.Size = New System.Drawing.Size(178, 20)
         Me.TelefonTextBox.TabIndex = 4
         '
         'Label1
@@ -287,7 +301,7 @@ Partial Class frmKupci
         Me.Label1.AutoSize = True
         Me.Label1.DataBindings.Add(New System.Windows.Forms.Binding("Tag", Me.KupacBindingSource, "KupacId", True))
         Me.Label1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.KupacBindingSource, "KupacId", True, System.Windows.Forms.DataSourceUpdateMode.Never))
-        Me.Label1.Location = New System.Drawing.Point(153, 68)
+        Me.Label1.Location = New System.Drawing.Point(75, 121)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(39, 13)
         Me.Label1.TabIndex = 13
@@ -309,11 +323,17 @@ Partial Class frmKupci
         Me.TableAdapterManager.RacunTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = Borzal.BorzalDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
         'frmKupci
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(479, 327)
+        Me.BackColor = System.Drawing.Color.LemonChiffon
+        Me.ClientSize = New System.Drawing.Size(311, 305)
+        Me.Controls.Add(Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(KupacIdLabel)
         Me.Controls.Add(NazivLabel)
@@ -327,6 +347,7 @@ Partial Class frmKupci
         Me.Controls.Add(TelefonLabel)
         Me.Controls.Add(Me.TelefonTextBox)
         Me.Controls.Add(Me.KupacBindingNavigator)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frmKupci"
         Me.Text = "KUPCI"
         CType(Me.KupacBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
@@ -335,6 +356,7 @@ Partial Class frmKupci
         CType(Me.KupacBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BorzalDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gr1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -363,4 +385,5 @@ Partial Class frmKupci
     Friend WithEvents TelefonTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents gr1 As System.Windows.Forms.ErrorProvider
+    Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
 End Class

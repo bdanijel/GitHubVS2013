@@ -3,7 +3,18 @@
     Dim polje As Object
     Dim dg As Integer
     Dim gg As Integer
-    Dim ErrorProvider1 As ErrorProvider
+
+
+    '******************************
+    '**** KOD ZA UNOS ENTEROM *****
+    '******************************
+
+    'Private Sub nazivtextbox_KeyDown(sender As Object, e As KeyEventArgs) Handles NazivTextBox.KeyDown, MestoTextBox.KeyDown, AdresaTextBox.KeyDown, KbrTextBox.KeyDown, TelefonTextBox.KeyDown
+    '    If e.KeyCode = Keys.Enter Then
+    '        e.SuppressKeyPress = True
+    '        ProcessTabKey(True)
+    '    End If
+    'End Sub
 
     Sub UnhandledExceptionHandler()
         MsgBox("An error occured. Error Number: " & Err.Number & " Description: " & Err.Description & " Source: " & Err.Source)
@@ -52,33 +63,34 @@
                 End If
         End Select
     End Function
-    Sub ValidateNumeric(ByVal ctlControl As Control)
-        Try
-            If Not IsNumeric(ctlControl.Text) Then
-                'Postavi grešku.
-                ErrorProvider1.SetError(ctlControl, "Molim Vas unesite broj.")
-            Else
-                'Očisti grešku.
-                ErrorProvider1.SetError(ctlControl, "")
-            End If
-        Catch
-            'Obrada grešaka
-            UnhandledExceptionHandler()
-        End Try
-    End Sub
-    Sub ValidateNotBlank(ByVal ctlControl As Control)
+    '    Function ValidateNumeric(ctlControl As Control)
+    '        Dim ErrorProvider1 As ErrorProvider
+    '        Try
+    '            If Not IsNumeric(ctlControl.Text) Then
+    '                'Postavi grešku.
+    '                ErrorProvider1.SetError(ctlControl, "Molim Vas unesite broj.")
+    '            Else
+    '                'Očisti grešku.
+    '                ErrorProvider1.SetError(ctlControl, "")
+    '            End If
+    '        Catch
+    '            'Obrada grešaka
+    '            UnhandledExceptionHandler()
+    '        End Try
+    '    End Function
 
-        Try
-            If ctlControl.Text = "" Then
-                'postavi grešku
-                ErrorProvider1.SetError(ctlControl, "Molim Vas da unesete vrednost u polje")
-            Else
-                'Očisti grešku
-                ErrorProvider1.SetError(ctlControl, "")
-            End If
-        Catch
-            'obrada grešaka.
-            UnhandledExceptionHandler()
-        End Try
-    End Sub
+    '    Sub ValidateNotBlank(ctlControl As Control)
+    '        Try
+    '            If String.IsNullOrEmpty(ctlControl.Text) Then
+    '                'postavi grešku
+    '                ErrorProvider1.SetError(ctlControl, "Molim Vas da unesete vrednost u polje")
+    '            Else
+    '                'Očisti grešku
+    '                ErrorProvider1.SetError(ctlControl, "")
+    '            End If
+    '        Catch
+    '            'obrada grešaka.
+    '            UnhandledExceptionHandler()
+    '        End Try
+    '    End Sub
 End Module
