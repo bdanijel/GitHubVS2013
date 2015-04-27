@@ -23,7 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.KupacBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BorzalDataSet = New Borzal.BorzalDataSet()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -47,6 +47,7 @@ Partial Class Form1
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.KupacTableAdapter = New Borzal.BorzalDataSetTableAdapters.KupacTableAdapter()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
         CType(Me.KupacBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BorzalDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -177,9 +178,9 @@ Partial Class Form1
         '
         'ReportViewer1
         '
-        ReportDataSource1.Name = "DataSet1"
-        ReportDataSource1.Value = Me.KupacBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
+        ReportDataSource2.Name = "DataSet1"
+        ReportDataSource2.Value = Me.KupacBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "Borzal.Report1.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(216, 12)
         Me.ReportViewer1.Name = "ReportViewer1"
@@ -197,11 +198,19 @@ Partial Class Form1
         Me.TextBox4.Size = New System.Drawing.Size(100, 20)
         Me.TextBox4.TabIndex = 6
         '
+        'TextBox5
+        '
+        Me.TextBox5.Location = New System.Drawing.Point(110, 152)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox5.TabIndex = 7
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(905, 464)
+        Me.Controls.Add(Me.TextBox5)
         Me.Controls.Add(Me.TextBox4)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Controls.Add(Me.StatusStrip1)
@@ -243,4 +252,5 @@ Partial Class Form1
     Friend WithEvents BorzalDataSet As Borzal.BorzalDataSet
     Friend WithEvents KupacTableAdapter As Borzal.BorzalDataSetTableAdapters.KupacTableAdapter
     Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
 End Class
