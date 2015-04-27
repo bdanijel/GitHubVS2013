@@ -88,6 +88,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BorzalDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BorzalModul.vb" />
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
     </Compile>

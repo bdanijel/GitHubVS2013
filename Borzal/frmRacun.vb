@@ -1,12 +1,13 @@
 ﻿Public Class frmRacun
-
+   
     Private Sub RacunBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles RacunBindingNavigatorSaveItem.Click
         Try
             Me.Validate()
             Me.RacunBindingSource.EndEdit()
             Me.TableAdapterManager.UpdateAll(Me.BorzalDataSet)
-        Catch ex As Exception
-            MsgBox("DUPLI!")
+        Catch
+            'pozivamo funkciju za obradu greške!!! 
+            UnhandledExceptionHandler()
         End Try
 
 
